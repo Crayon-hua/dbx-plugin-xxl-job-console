@@ -15,3 +15,7 @@ Go standard library: BSD 3-Clause License, Copyright The Go Authors.
 Full dependency license texts are included alongside this notice under assets/.
 This plugin communicates with XXL-JOB Admin over HTTP; XXL-JOB server source and
 server credentials are not included in the install package.
+
+Apache ECharts: Apache License 2.0; see ECHARTS-LICENSE.txt. zrender: BSD 3-Clause; see ZRENDER-LICENSE.txt.
+Fork attribution: see UPSTREAM-NOTICES.md.
+

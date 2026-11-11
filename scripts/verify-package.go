@@ -98,8 +98,12 @@ func verify(name string, doHandshake bool) {
 	require(manifest.ID == sourceManifest.ID && manifest.Version == sourceManifest.Version, "plugin identity mismatch")
 	exe := manifest.Entrypoints.Backend.Executable
 	require(strings.HasPrefix(exe, "bin/"+metadata.Target+"/"), "target and executable path mismatch")
-	require(len(files) == 12, "unexpected package entries")
+	require(len(files) == 16, "unexpected package entries")
 	assets := map[string]bool{"assets/plugin.svg": true, "assets/THIRD_PARTY_NOTICES.txt": true, "assets/PLUGIN-LICENSE.txt": true, "assets/SDK-LICENSE.txt": true, "assets/VUE-LICENSE.txt": true, "assets/LUCIDE-LICENSE.txt": true, "assets/GO-NET-LICENSE.txt": true, "assets/GO-LICENSE.txt": true}
+	assets["assets/UPSTREAM-NOTICES.md"] = true
+	assets["assets/LICENSE.txt"] = true
+	assets["assets/ECHARTS-LICENSE.txt"] = true
+	assets["assets/ZRENDER-LICENSE.txt"] = true
 	for p := range files {
 		require(p == exe || p == "checksums.json" || p == "manifest.json" || p == "ui/index.html" || assets[p], "unexpected entry: "+p)
 	}
@@ -164,6 +168,6 @@ func handshake(binary []byte, version string) {
 		}
 	}
 	must(json.Unmarshal(bytes.TrimSpace(output), &reply))
-	require(reply.Result.ProtocolVersion == 1 && reply.Result.Plugin.ID == "io.dbx.xxljob-console" && reply.Result.Plugin.Version == version, "package handshake mismatch")
+	require(reply.Result.ProtocolVersion == 1 && reply.Result.Plugin.ID == "io.github.crayon-hua.xxljob-console" && reply.Result.Plugin.Version == version, "package handshake mismatch")
 	fmt.Println("PASS packaged binary: plugin/initialize identity, version and protocol 1")
 }

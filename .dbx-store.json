@@ -1,11 +1,20 @@
 {
-  "name": "XXL-JOB Console",
+  "name": "XXL-JOB Console (Crayon)",
   "description": "Manage XXL-JOB tasks, logs and executors with DBX built-in AI and MCP, scoped permissions and confirmed operation previews.",
   "icon": "assets/plugin.svg",
-  "tags": ["xxl-job", "scheduler", "jobs", "ai", "mcp"],
-  "permissions": ["host.workbench", "host.ai"],
-  "source": "https://github.com/Ezreal-byte/dbx-plugin-xxl-job-console",
-  "homepage": "https://github.com/Ezreal-byte/dbx-plugin-xxl-job-console",
+  "tags": [
+    "xxl-job",
+    "scheduler",
+    "jobs",
+    "ai",
+    "mcp"
+  ],
+  "permissions": [
+    "host.workbench",
+    "host.ai"
+  ],
+  "source": "https://github.com/Crayon-hua/dbx-plugin-xxl-job-console",
+  "homepage": "https://github.com/Crayon-hua/dbx-plugin-xxl-job-console",
   "license": "MIT",
-  "releaseNotes": "0.4.3 declares MCP tool access levels in the plugin manifest so external MCP tools are visible again on DBX hosts that require tools/access (fixes undeclared tools). Keeps 2.2.x/2.3.x/3.4.x/3.5.x profiles, scoped permissions and preview-confirmed writes. Requires DBX 0.6.43+ and Host API ^1.4.0."
+  "releaseNotes": "Independent Crayon-maintained fork. Fixes external MCP tool visibility with 22 explicit access declarations; uses a distinct plugin identity and matching backend handshake version. Retains upstream preview confirmations and connection-scoped permissions."
 }

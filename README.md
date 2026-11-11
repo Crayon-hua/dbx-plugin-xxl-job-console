@@ -2,7 +2,11 @@
 
 DBX workbench for official XXL-JOB Admin. Provides separate `2.2.x`, `2.3.x`, `3.4.x` and `3.5.x` API profiles; choose the Admin version when creating a connection. These profiles were checked against official `2.2.0`, `2.3.0`, `3.4.2` and `3.5.0` source respectively. Other releases and customized distributions are not assumed compatible without testing.
 
-This community plugin is published by **Ezreal-byte** (catalog publisher ID `ezreal-byte`) as `io.dbx.xxljob-console`. It does not require direct database access or modify the XXL-JOB server.
+This independent fork is maintained by **Crayon-hua** (publisher `crayon-hua`) as `io.github.crayon-hua.xxljob-console`. It derives from [Ezreal-byte/dbx-plugin-xxl-job-console](https://github.com/Ezreal-byte/dbx-plugin-xxl-job-console) and preserves its MIT license and attribution. It is a separate plugin, not an official update or identity transfer of `io.dbx.xxljob-console`.
+
+## 0.4.4: independent Crayon fork
+
+Fixes external MCP visibility with declarations for all 22 tools; updates the plugin, workbench/log references, package verifier and backend handshake to the independent identity. Original plugin connections are not migrated automatically. Configure a new connection for this plugin. See [fork release notes](RELEASE_NOTES_0.4.4.md).
 
 ## Credits and changes
 

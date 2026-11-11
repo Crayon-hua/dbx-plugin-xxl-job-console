@@ -16,8 +16,8 @@ import (
 	sdk "github.com/t8y2/dbx/plugins/sdk/go/dbx-plugin-sdk"
 )
 
-const pluginID = "io.dbx.xxljob-console"
-const version = "0.4.2"
+const pluginID = "io.github.crayon-hua.xxljob-console"
+const version = "0.4.4"
 
 type plugin struct {
 	lifecycle sync.Mutex

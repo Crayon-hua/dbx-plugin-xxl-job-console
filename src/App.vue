@@ -266,7 +266,7 @@ async function restoreStandaloneLog(value: Record<string, unknown>, current: num
 async function newLogTab() {
   const row = logState.value?.row;
   if (!row || !window.dbxPlugin?.openWorkbench) return;
-  try { await window.dbxPlugin.openWorkbench('io.dbx.xxljob-console.log', { connectionId: connectionId.value, page: 'log', tabTitle: `#${row.id} ${t('日志查看')}`, log: { id: row.id, jobId: row.jobId, jobGroup: row.jobGroup, triggerTime: row.triggerTime } }, { forceNew: true }); }
+  try { await window.dbxPlugin.openWorkbench('io.github.crayon-hua.xxljob-console.log', { connectionId: connectionId.value, page: 'log', tabTitle: `#${row.id} ${t('日志查看')}`, log: { id: row.id, jobId: row.jobId, jobGroup: row.jobGroup, triggerTime: row.triggerTime } }, { forceNew: true }); }
   catch (e) { showToast('error', t('新窗口打开失败'), message(e)); }
 }
 function scheduleLog() { if (logTimer) clearTimeout(logTimer); logTimer = undefined; if (logState.value?.follow && !logState.value.end && !logState.value.error) logTimer = setTimeout(() => void readLog(), 3000); }
