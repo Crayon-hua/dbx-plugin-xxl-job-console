@@ -3,6 +3,15 @@ name: Build DBX review candidates
 on:
   release:
     types: [published]
+  workflow_dispatch:
+    inputs:
+      release_tag:
+        description: Existing release tag to build
+        required: true
+        type: string
+
+env:
+  RELEASE_TAG: ${{ github.event.release.tag_name || inputs.release_tag || github.ref_name }}
 
 concurrency:
   group: xxl-job-console-${{ github.ref }}
@@ -16,6 +25,8 @@ jobs:
     runs-on: macos-15
     steps:
       - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.release.tag_name || inputs.release_tag || github.ref_name }}
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
@@ -24,7 +35,7 @@ jobs:
         with:
           go-version-file: backend/go.mod
       - name: Verify release tag
-        run: test "${GITHUB_REF_NAME}" = "v$(node -p 'require("./manifest.json").version')"
+        run: test "${RELEASE_TAG}" = "v$(node -p 'require("./manifest.json").version')"
       - run: npm ci --ignore-scripts
       - run: npm test
       - run: go -C backend test -race ./...
@@ -39,4 +50,4 @@ jobs:
       - name: Upload unsigned candidates
         env:
           GH_TOKEN: ${{ github.token }}
-        run: gh release upload "${GITHUB_REF_NAME}" dist/*.dbxp dist/*.artifact.json dist/SHA256SUMS-*.txt dist/release-candidates.json --clobber
+        run: gh release upload "${RELEASE_TAG}" dist/*.dbxp dist/*.artifact.json dist/SHA256SUMS-*.txt dist/release-candidates.json
