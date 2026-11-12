@@ -16,5 +16,5 @@
   "source": "https://github.com/Crayon-hua/dbx-plugin-xxl-job-console",
   "homepage": "https://github.com/Crayon-hua/dbx-plugin-xxl-job-console",
   "license": "MIT",
-  "releaseNotes": "Independent Crayon-maintained fork. Fixes external MCP tool visibility with 22 explicit access declarations; uses a distinct plugin identity and matching backend handshake version. Retains upstream preview confirmations and connection-scoped permissions."
+  "releaseNotes": "0.4.5 advertises the mcp sidecar capability so DBX can list and grant MCP tools (fixes 0/0 tools). Keeps declared tool access levels, Admin 2.2-3.5 profiles and preview-confirmed writes."
 }

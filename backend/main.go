@@ -17,7 +17,11 @@ import (
 )
 
 const pluginID = "io.github.crayon-hua.xxljob-console"
-const version = "0.4.4"
+const version = "0.4.5"
+
+// Host MCP settings and external tools require the sidecar to advertise "mcp".
+// Manifest tools/access alone is not enough; without this capability DBX shows 0/0 tools.
+var pluginCapabilities = []string{"connections", "mcp"}
 
 type plugin struct {
 	lifecycle sync.Mutex
@@ -639,7 +643,7 @@ func validateMutation(method string, form url.Values) error {
 	return nil
 }
 func main() {
-	server := sdk.NewServer(sdk.Metadata{ID: pluginID, Version: version, Capabilities: []string{"connections"}}, newPlugin())
+	server := sdk.NewServer(sdk.Metadata{ID: pluginID, Version: version, Capabilities: pluginCapabilities}, newPlugin())
 	if e := server.Serve(); e != nil {
 		log.Fatal(e)
 	}

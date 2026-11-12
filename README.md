@@ -40,6 +40,10 @@ Select **2.2.x** and set the context path to **/xxl-job-admin** for the official
 
 Version `0.4.3` adds the required `tools` / `toolsets` access declarations to the MCP contribution in `manifest.json`. Newer DBX hosts hide every external tool that lacks an author-declared `access` level (`read` / `write` / `full`). See [0.4.3 release notes](RELEASE_NOTES_0.4.3.md) and [issue #7](https://github.com/Ezreal-byte/dbx-plugin-xxl-job-console/issues/7).
 
+## 0.4.5: advertise sidecar `mcp` capability
+
+Version `0.4.5` fixes DBX Plugin Center showing **0/0 tools**. The sidecar must advertise `mcp` in `plugin/initialize` capabilities; manifest declarations alone are not enough. See [0.4.5 release notes](RELEASE_NOTES_0.4.5.md).
+
 ## Connect
 
 Requires DBX `0.6.43` or newer, Host API `^1.4.0`. Enter the Admin IP/domain, port, username and password. New connections select `3.4.x` and `/` by default, matching the official 3.4.2 configuration. For stock `2.2.x` or `2.3.x`, select that version and change the application path to `/xxl-job-admin`. If the Admin is deployed at a custom path, enter that path instead. HTTPS and DBX SSH/proxy/HTTP tunnels are supported. HTTP transmits the login password in clear text: use it only on a trusted private network.

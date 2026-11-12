@@ -25,6 +25,9 @@ func TestIndependentForkIdentityAndMCPDeclarations(t *testing.T) {
 	if m.ID != pluginID || m.Version != version || m.Publisher != "crayon-hua" {
 		t.Fatal("manifest and native identity differ")
 	}
+	if len(pluginCapabilities) != 2 || pluginCapabilities[0] != "connections" || pluginCapabilities[1] != "mcp" {
+		t.Fatalf("sidecar must advertise connections+mcp, got %#v", pluginCapabilities)
+	}
 	seen := map[string]bool{}
 	count := 0
 	for _, c := range m.Contributions {
