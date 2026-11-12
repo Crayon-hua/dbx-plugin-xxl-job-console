@@ -1,10 +1,10 @@
 {
   "manifest_version": 1,
   "id": "io.github.crayon-hua.xxljob-console",
-  "name": "XXL-JOB Console (Crayon)",
+  "name": "XXL-JOB",
   "version": "0.4.5",
   "publisher": "crayon-hua",
-  "description": "XXL-JOB task management with DBX AI, MCP, per-connection permissions and previewed operations",
+  "description": "XXL-JOB Admin console with MCP support for jobs, logs, and executors. Open a GitHub Issue if anything breaks—we respond quickly.",
   "icon": "assets/plugin.svg",
   "permissions": [
     "host.workbench",

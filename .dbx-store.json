@@ -1,6 +1,6 @@
 {
-  "name": "XXL-JOB Console (Crayon)",
-  "description": "Manage XXL-JOB tasks, logs and executors with DBX built-in AI and MCP, scoped permissions and confirmed operation previews.",
+  "name": "XXL-JOB",
+  "description": "XXL-JOB Admin console with MCP support for jobs, logs, and executors. Open a GitHub Issue if anything breaks—we respond quickly.",
   "icon": "assets/plugin.svg",
   "tags": [
     "xxl-job",
@@ -16,5 +16,11 @@
   "source": "https://github.com/Crayon-hua/dbx-plugin-xxl-job-console",
   "homepage": "https://github.com/Crayon-hua/dbx-plugin-xxl-job-console",
   "license": "MIT",
-  "releaseNotes": "0.4.5 advertises the mcp sidecar capability so DBX can list and grant MCP tools (fixes 0/0 tools). Keeps declared tool access levels, Admin 2.2-3.5 profiles and preview-confirmed writes."
+  "releaseNotes": "0.4.5 advertises the mcp sidecar capability so DBX lists MCP tools again (fixes 0/0). Renames the listing to XXL-JOB and highlights MCP support with fast Issue response.",
+  "localizations": {
+    "zh-CN": {
+      "name": "XXL-JOB",
+      "description": "支持 MCP 的 XXL-JOB 控制台，覆盖任务、日志与执行器。遇到问题可提 Issues，我们会尽快响应。"
+    }
+  }
 }
